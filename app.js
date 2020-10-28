@@ -29,7 +29,7 @@ corsPromise().then(
   (request) =>
     (request.onload = request.onerror = function () {
 	// TODO: ADD FUNCTION, ETC. FOR WHATEVER YOU WANT TO DO ONCE THE DATA IS RECEIVED
-	pdata = JSON.parse(request.response).data
+	pdata = JSON.parse(request.response).data;
 	pname = pdata.map(plant => plant.common_name);
 	pimgurl = pdata.map(plant => plant.image_url);
 	pi = 0;
