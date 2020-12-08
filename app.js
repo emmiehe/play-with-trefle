@@ -39,18 +39,25 @@ corsPromise().then(
 //// TODO: ADD WHATEVER FUN CONTENT YOU WANT ////
 function addMore() {
     if (pdata){
-	var div = document.createElement("div");
-	var p = document.createElement("p");
-	p.innerHTML = pname[pi];
-	var img = document.createElement("img");
-	img.setAttribute("src", pimgurl[pi]);
-	pi += 1;
-	if (pi >= 20){
-	    pi = 0;
-	}
-	document.getElementById("result").appendChild(div);
-	div.setAttribute("class", "item");
-	div.appendChild(p);
-	div.appendChild(img);
+    	var pWait = document.createElement("p");
+    	pWait.innerHTML = "";
+    	document.getElementById("wait").replaceChild(pWait, document.getElementById("wait").firstChild);
+		var div = document.createElement("div");
+		var p = document.createElement("p");
+		p.innerHTML = pname[pi];
+		var img = document.createElement("img");
+		img.setAttribute("src", pimgurl[pi]);
+		pi += 1;
+		if (pi >= 20){
+		    pi = 0;
+		}
+		document.getElementById("result").appendChild(div);
+		div.setAttribute("class", "item");
+		div.appendChild(p);
+		div.appendChild(img);
+    } else {
+    	var p = document.createElement("p");
+    	p.innerHTML = "Trying to get some plants from trefle.io...";
+    	document.getElementById("wait").replaceChild(p, document.getElementById("wait").firstChild);
     }
 }
