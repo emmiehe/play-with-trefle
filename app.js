@@ -29,10 +29,10 @@ corsPromise().then(
   (request) =>
     (request.onload = request.onerror = function () {
 	// TODO: ADD FUNCTION, ETC. FOR WHATEVER YOU WANT TO DO ONCE THE DATA IS RECEIVED
-	pdata = JSON.parse(request.response).data;
-	pname = pdata.map(plant => plant.common_name);
-	pimgurl = pdata.map(plant => plant.image_url);
-	pi = 0;
+			pdata = JSON.parse(request.response).data;
+			pname = pdata.map(plant => plant.common_name);
+			pimgurl = pdata.map(plant => plant.image_url);
+			pi = 0;
     })
 );
 
@@ -56,5 +56,9 @@ function addMore() {
 	} else {
 		pWait.innerHTML = "Trying to get some plants from trefle.io...when in doubt, click the button again.";
 	}
-	document.getElementById("wait").replaceChild(pWait, document.getElementById("wait").firstChild);
+	if (document.getElementById("wait").firstChild) {
+		document.getElementById("wait").replaceChild(pWait, document.getElementById("wait").firstChild);
+	} else {
+		document.getElementById("wait").appendChild(pWait);
+	}
 }

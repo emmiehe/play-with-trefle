@@ -6,17 +6,17 @@ body {
 }
 
 .button {
-  display: inline-block;
+  /*display: inline-block;*/
   border-radius: 25px;
   background-color: seagreen;
-  border: none;
   color: #FFFFFF;
   text-align: center;
-  padding: 2vh;
+    padding: 1vh;
   width: 100%;
-  transition: all 0.5s;
+    height: 4rem;
   cursor: pointer;
-  margin: 10vh 0 0 0;
+    font-size: 2rem;
+    border: none;
 }
 
 img{
@@ -34,7 +34,7 @@ div {
 }
 
 div > .item {
-    padding: 1vh;
+    margin: 1.5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,18 +43,16 @@ div > .item {
 }
 
 .navbar {
-    overflow: hidden;
     background-color: lightgreen;
-    /*position: fixed;*/
     text-align: left;
-
 }
 
 .navbar a {
+    border: thick solid white;
     border-radius: 25px;
-    padding: 2vh;
     color: white;
     text-decoration: none;
+    padding: 1vh;
 }
 
 .navbar a:hover {
@@ -63,7 +61,6 @@ div > .item {
 }
 
 .info {
-    margin: 3vh 0 0 0;
-    color: seagreen;
     margin: 1vh;
+    color: seagreen;
 }
