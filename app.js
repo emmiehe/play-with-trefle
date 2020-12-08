@@ -20,10 +20,10 @@ const corsPromise = () =>
     resolve(request);
   });
 
-var pdata = "";
-var pname = "";
-var pimgurl = "";
-var pi = 0;
+let pdata = "";
+let pname = "";
+let pimgurl = "";
+let pi = 0;
 // THIS IS SOME SAMPLE CODE FOR HOW TO USE PROMISES -- feel free to adapt this into a function!
 corsPromise().then(
   (request) =>
@@ -36,28 +36,25 @@ corsPromise().then(
     })
 );
 
-//// TODO: ADD WHATEVER FUN CONTENT YOU WANT ////
 function addMore() {
-    if (pdata){
-    	var pWait = document.createElement("p");
-    	pWait.innerHTML = "";
-    	document.getElementById("wait").replaceChild(pWait, document.getElementById("wait").firstChild);
-		var div = document.createElement("div");
-		var p = document.createElement("p");
+	let pWait = document.createElement("p");
+	if (pdata){
+		pWait.innerHTML = "";
+		let div = document.createElement("div");
+		let p = document.createElement("p");
 		p.innerHTML = pname[pi];
-		var img = document.createElement("img");
+		let img = document.createElement("img");
 		img.setAttribute("src", pimgurl[pi]);
 		pi += 1;
 		if (pi >= 20){
-		    pi = 0;
+				pi = 0;
 		}
 		document.getElementById("result").appendChild(div);
 		div.setAttribute("class", "item");
 		div.appendChild(p);
 		div.appendChild(img);
-    } else {
-    	var p = document.createElement("p");
-    	p.innerHTML = "Trying to get some plants from trefle.io...";
-    	document.getElementById("wait").replaceChild(p, document.getElementById("wait").firstChild);
-    }
+	} else {
+		pWait.innerHTML = "Trying to get some plants from trefle.io...when in doubt, click the button again.";
+	}
+	document.getElementById("wait").replaceChild(pWait, document.getElementById("wait").firstChild);
 }

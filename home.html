@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CS1300 JavaScript Studio</title>
+    <title>Get Some Plants</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <!-- TODO: ADD HTML FOR WHATEVER YOU WANT TO SHOW ON THE PAGE!  -->
-    <button class="button" type="button" onclick="addMore()">Give me a plant</button>
-    <div id="wait">
-    <div id="result"/>
+
+    <h1 id="navbar" class="navbar">
+      <a href="https://ancient-harbor-28509.herokuapp.com/">Go to Portfolio</a>
+    </h1>
+
+    <div class="info"><h3>Hi, I assume you came here from my portfolio page. This is a smol javascript application that retrieves plant photos from trefle.io.</h3> </div>
+    <button class="button" type="button" onclick="addMore()">Click me to get a plant</button>
+    <div id="wait"></div>
+    <div id="result"></div>
   </body>
   <script src="app.js"></script>
 </html>
